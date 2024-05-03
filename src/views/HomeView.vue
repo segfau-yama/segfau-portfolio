@@ -39,7 +39,7 @@
     
     <v-container>
       <h1 class="text-center">History</h1>
-      <v-timeline side="end">
+      <v-timeline side="end" truncate-line="both">
         <v-timeline-item
                 dot-color="primary"
                 class="border"
@@ -55,7 +55,7 @@
         </v-timeline-item>
       </v-timeline>
     </v-container>
-
+    <div class="my-10" />
     <v-container>
       <h1 class="text-center">Works</h1>
       <v-row>
@@ -69,7 +69,7 @@
     </v-col>
   </v-row>
     </v-container>
-    
+    <div class="my-10" />
   </v-app>
 </template>
 
