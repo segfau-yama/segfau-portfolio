@@ -8,10 +8,7 @@ import vuetify from 'vite-plugin-vuetify'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'segfau_lab',
-  server: {
-    host: true,
-  },
+  base: './',
   plugins: [
 		vue(),
 		vuetify({ autoImport: true }),
