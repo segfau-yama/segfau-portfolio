@@ -20,7 +20,7 @@
       </v-btn>
       <template v-slot:extension>
         <v-tabs v-model="tab" show-arrows app>
-          <v-tab v-for="(page, index) in pages" :key="index" :to="page.path">
+          <v-tab v-for="(page, index) in routes" :key="index" :to="page.path">
             {{ page.name }}
           </v-tab>
         </v-tabs>
@@ -59,7 +59,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { pages } from '@/router'
+import { routes } from '@/router'
+
 
 const contacts = [
   {
@@ -86,7 +87,7 @@ export default defineComponent({
     return {
       tab: null,
       search_icon: false,
-      pages,
+      routes,
       contacts,
     }
   },

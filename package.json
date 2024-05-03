@@ -6,7 +6,7 @@
     "serve": "vite preview",
     "build": "vite build",
     "build-only": "vite build",
-    "dev": "vite --host",
+    "dev": "vite",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
     "deploy": "gh-pages -d dist"
@@ -17,6 +17,7 @@
     "pinia": "^2.0.32",
     "roboto-fontface": "*",
     "vue": "^3.2.47",
+    "vue-meta": "^3.0.0-alpha.10",
     "vue-router": "^4.1.6",
     "vuetify": "^3.0.0-beta.0",
     "webfontloader": "^1.0.0"

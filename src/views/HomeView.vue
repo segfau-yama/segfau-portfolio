@@ -42,7 +42,7 @@
       <v-timeline side="end">
         <v-timeline-item
                 dot-color="primary"
-                class="text-h6 border"
+                class="border"
                 v-for="history in histories"
         >
         <template v-slot:opposite>
@@ -61,7 +61,7 @@
       <v-row>
     <v-col cols="12" sm="6" md="4" v-for="work in works">
       <v-card>
-        <v-img cover :src="work.img"></v-img>
+        <v-img cover :lazy-src="work.img" :src="work.img"></v-img>
         <v-card-title><b>{{ work.title }}</b></v-card-title>
         <v-card-subtitle>{{ work.subtitle }}</v-card-subtitle>
         <v-card-text>{{ work.text }}</v-card-text>

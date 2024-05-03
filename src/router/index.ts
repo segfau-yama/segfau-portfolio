@@ -4,11 +4,12 @@ import AboutView from '@/views/AboutView.vue'
 import WorkView from '@/views/WorkView.vue'
 import BlogView from '@/views/BlogView.vue'
 
-const pages = [
+const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomeView
+    component: HomeView,
+    meta: { title: 'ページタイトル', desc: 'ディスクリプションを記述' },
   },
   {
     path: '/about',
@@ -29,7 +30,7 @@ const pages = [
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: pages
+  routes
 })
 
-export {router, pages}
+export {router, routes}
