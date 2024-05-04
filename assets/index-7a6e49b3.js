@@ -7,7 +7,7 @@
     PS3コントローラとの接続、シリアルモニタからのコマンド打ち込みが可能。
     `},{img:Pm,title:"YmYm Omuni",subtitle:"2023/1",text:`
     DCモータで動く三輪オムニラジコン。
-    期待は3dプリンタパーツとテクセルで作成
+    機体は3dプリンタパーツとテクセルで作成
     `},{img:Rm,title:"Motor Control Board",subtitle:"2023/1",text:`
     4つのDCモーターを制御できるボード。
     ESP32を利用しているためbluetoothコントローラと通信が可能。
