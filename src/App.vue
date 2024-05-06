@@ -1,32 +1,30 @@
 <template>
-  <v-app>
+  <v-app :theme="theme">
     <v-app-bar 
     color="primary"
     scroll-behavior="hide"
     >
       <v-toolbar-title>Segfau-Lab</v-toolbar-title>
-      <v-expand-transition>
-        <v-text-field
-          hide-details
-          single-line
-          v-if="search_icon"
-        ></v-text-field>
-      </v-expand-transition>
-      <v-btn icon @click="on_search">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-      <template v-slot:extension>
-        <v-tabs v-model="tab" show-arrows app>
+      <template v-if="other">
+        <v-tabs align-tabs="center">
           <v-tab v-for="(page, index) in routes" :key="index" :to="page.path">
             {{ page.name }}
           </v-tab>
         </v-tabs>
       </template>
+      <template v-slot:extension v-if="tablet">
+        <v-spacer v-if="mobile"></v-spacer>
+        <v-tabs>
+          <v-tab v-for="(page, index) in routes" :key="index" :to="page.path">
+            {{ page.name }}
+          </v-tab>
+        </v-tabs>
+        <v-spacer v-if="mobile"></v-spacer>
+      </template>
+      <v-btn @click="change_theme" icon>
+        <v-icon :icon="icon_theme"></v-icon>
+      </v-btn>
     </v-app-bar>
-
     <v-main>
       <RouterView></RouterView>
     </v-main>
@@ -51,51 +49,64 @@
       </div>
       <v-divider></v-divider>
       <div>
-        {{ new Date().getFullYear() }} — <strong>YamaYama</strong>
+        ©{{ new Date().getFullYear() }} <strong>YamaYama</strong> All Rights Reserved
       </div>
     </v-footer>
   </v-app>
 </template>
 
+
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { ref, defineComponent } from 'vue'
 import { routes } from '@/router'
-
-
-const contacts = [
-  {
-    icon: 'mdi-email',
-    url: 'mailto:suiki547@gmail.com',
-  },
-  {
-    icon: 'mdi-twitter',
-    url: 'https://twitter.com/VyaVma',
-  },
-  {
-    icon: 'mdi-github',
-    url: 'https://github.com/segfau-yama',
-  },
-  {
-    icon: 'mdi-discord',
-    url: 'https://discord.com/invite/pZHew9Ty',
-  },
-]
+import { useDisplay, useTheme } from 'vuetify'
 
 export default defineComponent({
   name: 'App',
-  data () {
+  setup() {
+    const theme = ref('light');
+    const display = useDisplay();
+    const contacts = [
+      {
+        icon: 'mdi-email',
+        url: 'mailto:suiki547@gmail.com',
+      },
+      {
+        icon: 'mdi-twitter',
+        url: 'https://twitter.com/VyaVma',
+      },
+      {
+        icon: 'mdi-github',
+        url: 'https://github.com/segfau-yama',
+      },
+      {
+        icon: 'mdi-discord',
+        url: 'https://discord.com/invite/pZHew9Ty',
+      },
+    ];
     return {
-      tab: null,
-      search_icon: false,
-      routes,
       contacts,
-    }
+      routes,
+      mobile: display.xs,
+      tablet: display.smAndDown,
+      other: display.mdAndUp,
+      theme,
+      icon_theme: 'mdi-weather-sunny',
+    };
   },
   methods: {
-    on_search() {
-      this.search_icon = !this.search_icon;
-    }
-  }
-})
+    change_theme: function() {
+      if (this.theme == 'light') {
+        this.theme = 'dark';
+        this.icon_theme = 'mdi-weather-sunny';
+      }
+      else {
+        this.theme = 'light';
+        this.icon_theme = 'mdi-weather-night';
+      }
+      console.log(this.icon_theme);
+    },
+  },
+});
 </script>
 

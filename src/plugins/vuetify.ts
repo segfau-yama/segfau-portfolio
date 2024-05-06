@@ -5,15 +5,13 @@ import 'vuetify/styles'
 // Vuetify
 import { createVuetify } from 'vuetify'
 
-const myCustomLightTheme = {
+const light = {
   dark: false,
   colors: {
     background: '#FFFFFF',
     surface: '#FFFFFF',
     primary: '#008B8B',
-    'primary-darken-1': '#3700B3',
     secondary: '#414141',
-    'secondary-darken-1': '#018786',
     error: '#B00020',
     info: '#2196F3',
     success: '#4CAF50',
@@ -21,11 +19,26 @@ const myCustomLightTheme = {
   },
 };
 
+const dark = {
+  dark: true,
+  colors: {
+    background: '#2F2F2F',
+    surface: '#414141',
+    primary: '#ffa500',
+    secondary: '#414141',
+    error: '#B00020',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FB8C00',
+  }
+}
+
 export default createVuetify({
   theme: {
-    defaultTheme: 'myCustomLightTheme',
+    defaultTheme: 'light',
     themes: {
-      myCustomLightTheme,
+      light,
+      dark,
     }
   },
 })

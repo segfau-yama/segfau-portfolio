@@ -1,3 +1,7 @@
 <template>
-  <v-app> This is an work page </v-app>
+  <work />
+  <div class="my-10" />
 </template>
+<script setup lang="ts">
+  import work from "@/components/Work.vue"
+</script>
