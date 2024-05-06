@@ -91,7 +91,7 @@ export default defineComponent({
       tablet: display.smAndDown,
       other: display.mdAndUp,
       theme,
-      icon_theme: 'mdi-weather-sunny',
+      icon_theme: 'mdi-weather-night',
     };
   },
   methods: {

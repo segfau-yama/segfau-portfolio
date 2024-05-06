@@ -24,7 +24,7 @@ const dark = {
   colors: {
     background: '#2F2F2F',
     surface: '#414141',
-    primary: '#ffa500',
+    primary: '#008000',
     secondary: '#414141',
     error: '#B00020',
     info: '#2196F3',
