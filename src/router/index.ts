@@ -9,7 +9,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: HomeView,
-    meta: { title: 'ページタイトル', desc: 'ディスクリプションを記述' },
   },
   {
     path: '/about',

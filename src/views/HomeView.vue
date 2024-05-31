@@ -17,6 +17,8 @@
     <div class="my-10" />
     <about />
     <div class="my-10" />
+    <skill />
+    <div class="my-10" />
     <history />
     <div class="my-10" />
     <work />
@@ -28,6 +30,7 @@
 import work from '@/components/Work.vue'
 import about from '@/components/About.vue'
 import history from '@/components/History.vue'
+import skill from '@/components/Skill.vue'
 import { defineComponent } from 'vue'
 import TopImage from '@/assets/top_image.webp';
 
@@ -39,6 +42,7 @@ export default defineComponent({
     work,
     about,
     history,
+    skill,
   },
   setup () {
     const histories = [

@@ -25,7 +25,7 @@ import Icon from "@/assets/segfau_icon.webp";
 
 export default defineComponent({
   name: 'About',
-  data () {
+  setup () {
     return {
       my_icon: Icon,
     }
